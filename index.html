@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>gsLex</title>
+  <meta name="author" content="刘光胜">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="gsLex"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="gsLex" type="application/atom+xml">
+  <link rel="stylesheet" href="//apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="//apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!-- 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-368771XX-X']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+ -->
+</head>
+
+<body>
+  <header id="header" class='normal_mode'>
+    <nav id="main-nav">
+  <ul class='container'>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/categories/projects">Labs</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="http://gsliu100.github.io/-Love-Day/">爱的纪念日</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+  </header>
+  <div id="content" class="container">
+    <div id="cover">
+	<div id="profile" alt="/images/coverBG.jpg">
+		<a href="/">
+			<div class="logo">
+				<img src="/logo.png" alt="Profile Picture">
+			</div>
+			<div id="title">gsLex</div>
+		</a>
+
+		
+		 <ul class="my-socials">
+  
+  <li>
+  	<a href="https://github.com/your_id" class="github" target="_blank">
+  		<i class="fa fa-github"></i>
+  	</a>
+  </li>
+  
+  <li>
+  	<a href="http://weibo.com/your_id" class="weibo" target="_blank">
+  		<i class="fa fa-weibo"></i>
+  	</a>
+  </li>
+  
+ 
+</ul>
+	</div>
+</div>
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-04-30T03:28:11.000Z"><a href="/2016/04/30/how-to-use-hexo/">周六, 2016 4月 30, 11:28:11 上午</a></time>
+
+  
+    <h1 class="title"><a href="/2016/04/30/how-to-use-hexo/">使用Hexo搭建github个人博客</a></h1>
+  
+
+
+  
+  <div class="categories">
+  	<i class="fa fa-folder-open"></i>
+    <a href="/categories/开发环境/">开发环境</a>
+  </div>
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/Hexo/">Hexo</a>, <a href="/tags/github/">github</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <p>查了各种资料，总算是把搭建Hexo博客的流程跑通了。有必要写一下整个过程。</p>
+<p><img src="/images/hexo.png" alt="hexo"></p>
+<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><ul>
+<li>安装nodejs： 整个环境基于nodejs生态，必须安装<a href="http://nodejs.org/" target="_blank" rel="external">nodejs</a>。下载安装nodejs，请自行百度。</li>
+<li>安装git，申请github账号： Hexo用于生成github静态页面，需要通过git进行部署。github相当于一个运程的代码仓库，你需要配置代码仓库地址（请看下边下边）。申请git账号就不多说了，怎样使用git网上也有很多教程！</li>
+</ul>
+<h3 id="正式安装Hexo"><a href="#正式安装Hexo" class="headerlink" title="正式安装Hexo"></a>正式安装Hexo</h3><p>首先新建一个文件夹，例如blogs用于你搭建本地博客的根目录。切换到该目录运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo//将hexo安装到全局，以便之后直接在控制台调用</span><br></pre></td></tr></table></figure></p>
+<p>之后运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init //用于初始化当前项目</span><br><span class="line">hexo generate //该命令用于生成静态页面</span><br><span class="line">hexo server //重新打开一个cmd窗口，再运行该命令。用于启动本地服务器</span><br></pre></td></tr></table></figure></p>
+<p>现在浏览器其中输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>，如果上边一切顺利你将看到一个显示Hexo页面。</p>
+<h3 id="将本地博客部署到gtihub"><a href="#将本地博客部署到gtihub" class="headerlink" title="将本地博客部署到gtihub"></a>将本地博客部署到gtihub</h3><p>在个github中新建一个项目。如果你想在别人输入 <a href="http://youcount.github.com" target="_blank" rel="external">http://youcount.github.com</a> 时就能看到你部署的项目，请将项目名称命名为youcount.com。找到刚才初始化过的hexo项目，在_config.yml文件末尾添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"> 	  type: git</span><br><span class="line"> 	  repo: https://github.com/gsliu100/gsliu100.github.com.git</span><br><span class="line"> 	  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>其中type为部署的方式，就是git，repo为你刚才创建的github项目的https地址，你可以在项目的setting中找到。之后运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>根据提示输入git账户及密码，顺利的话此时你本地的代码将上传到你的项目仓库中。这种部署方式需要每次输入用户名及密码，你可以将repo设置为项目ssh key，之后不需要每次输入账户及密码了（我是没成功！！）</p>
+<h3 id="分析一下Hexo中各文件-文件夹作用"><a href="#分析一下Hexo中各文件-文件夹作用" class="headerlink" title="分析一下Hexo中各文件/文件夹作用"></a>分析一下Hexo中各文件/文件夹作用</h3><p>Hexo的目录结构如下图：</p>
+<p><img src="/images/hexo-dir.png" alt="hexo-dir"><br>在这里你需要的关心的是public，source，themes目录及_config.yml配置文件。</p>
+<ul>
+<li>public目录存放的是你通过hexo generate命令生成好的静态文件，你部署的时候就是将该文件夹的的文件上传到git仓库。</li>
+<li>source目录是你在本地的主要工作目录，你编写的post，分类及标签的生成，需要用到的图片等文件都存放在该目录下。</li>
+<li>themes目录用于存放主题文件，每个主题对应一个文件夹。</li>
+<li>_congfig.yml是博客的配置文件，在这里你可以指定站点名称，使用的什么主题，站点作者等，以及之前git的配置都在该文件中进行。</li>
+</ul>
+<blockquote>
+<p>在每个主题文件下也有一个_congfig.yml配置文件，用于对特定主题的个性化。每个主题的制作者会对配置文件予以说明。</p>
+</blockquote>
+<h3 id="创建一篇post并给它贴上分类及标签"><a href="#创建一篇post并给它贴上分类及标签" class="headerlink" title="创建一篇post并给它贴上分类及标签"></a>创建一篇post并给它贴上分类及标签</h3><p>运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;postName&quot; //postName为创建的post的名称</span><br></pre></td></tr></table></figure></p>
+<p>打开source&gt;_posts，在该文件下你将看到刚才创建的post，现在你就可以使用<a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="external">Markdown</a>语法进行博客的书写了。接下来我们创建分类及标签的index页（也就是当你点击任何一个分类或者标签时打开的页面）。还是在source文件夹下，我们创建两个文件夹categories，tags，分别创建index.md文件。目录结构应该是这样子的。<br><img src="/images/source-dir.png" alt="source-dir"><br>注意到categories，tags文件夹下的index.md。里边的内容分别为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2016-05-03 14:14:40</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2016-05-03 14:18:02</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>注意到type的值。在我们刚刚创建的post的顶部写入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">categories: 开发环境 //一个post只能添加一个分类</span><br><span class="line">tags: [&apos;Hexo&apos;,&apos;github&apos;] //可以添加多个标签</span><br></pre></td></tr></table></figure></p>
+<h3 id="在本地浏览及上传到git仓库"><a href="#在本地浏览及上传到git仓库" class="headerlink" title="在本地浏览及上传到git仓库"></a>在本地浏览及上传到git仓库</h3><p>运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate //生成静态文件</span><br><span class="line">hexo deploy //部署到git</span><br></pre></td></tr></table></figure></p>
+<p>部署时需要输入你的git账号密码。</p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="alignleft">
+            <a href="/2016/04/30/how-to-use-hexo/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
+        </div>
+        
+        
+          <div class="alignright"> 
+            <a href="http://yoursite.com/2016/04/30/how-to-use-hexo/#comment" class="comment-link">
+              <i class="fa fa-comments"></i><span class="ds-thread-count" data-thread-key="/2016/04/30/how-to-use-hexo/">&nbsp;
+              </span>
+            </a>
+          </div>
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav>
+
+<script src="/js/jquery.anystretch.min.js"></script>
+<script src="/js/cover.js"></script>
+
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div>
+  
+  &copy; 2016 刘光胜
+  
+</div>
+Powered by <a href="http://zespia.tw/hexo/" title="Hexo" target="_blank" rel="external">Hexo</a> and <a href="http://pages.github.com/" title="GitHub Pages" target="_blank" rel="external">GitHub Pages</a>
+
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="//apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        (function(){
+
+            $(window).scroll(function(){
+
+                var scrollTop = $(window).scrollTop();
+                if ( scrollTop >200 ){
+                    $("#main-nav").removeClass('normal_mode').addClass('top_mode');
+                } else{
+                    $("#main-nav").removeClass('top_mode').addClass('normal_mode');
+                }
+
+            });
+
+        })();
+    </script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox({
+      'titlePosition': 'inside'
+    });
+  })(jQuery);
+  </script>
+
+
+
+    
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"your_id"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = 'http://static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+  
+  $(function(){
+
+    $('.title').hover(
+      function() {      
+        $(this).stop().animate(
+          {'marginLeft': '10px'}, 200
+        );   
+      }, 
+      function() {       
+        $(this).stop().animate({'marginLeft': '0px'}, 200);      
+      
+    });   
+
+  });
+
+</script>
+
+
+</body>
+</html>
