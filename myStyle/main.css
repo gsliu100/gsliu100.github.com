@@ -1,0 +1,13 @@
+.anystretch{
+	opacity:0;
+}
+p{
+	text-indent: 0!important;
+}
+#header #main-nav ul.container li{
+	margin-right: 5%;
+}
+// #header #main-nav ul.container li:last-child::before{
+// 	content:'<i class="fa fa-heart"></i>';
+// 	color:red;
+// }
