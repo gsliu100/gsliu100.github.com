@@ -11,3 +11,9 @@ p{
 // 	content:'<i class="fa fa-heart"></i>';
 // 	color:red;
 // }
+
+article .entry blockquote{
+	text-align: left;
+	font-style: normal;
+	border-right: 1px solid #ddd;
+}

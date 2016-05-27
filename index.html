@@ -106,6 +106,91 @@
   <div class="post-content">
     <header>
       
+      <time datetime="2016-05-27T12:10:29.000Z"><a href="/2016/05/27/Laravel-and-sximo/">2016 5月 27, 周五</a></time>
+
+  
+    <h1 class="title"><a href="/2016/05/27/Laravel-and-sximo/">Laravel-and-sximo</a></h1>
+  
+
+
+  
+  <div class="categories">
+  	<i class="fa fa-folder-open"></i>
+    <a href="/categories/Back-End/">Back-End</a>
+  </div>
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/PHP/">PHP</a>, <a href="/tags/Laravel/">Laravel</a>, <a href="/tags/sximo/">sximo</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <h2 id="Laravel-Sximo"><a href="#Laravel-Sximo" class="headerlink" title="Laravel+Sximo"></a>Laravel+Sximo</h2><p>当我们开发一个后台程序的时候，通常关注的就是怎样处理用户请求，给用户一个怎样的响应。</p>
+<h4 id="整个过程通常是这样子的："><a href="#整个过程通常是这样子的：" class="headerlink" title="整个过程通常是这样子的："></a>整个过程通常是这样子的：</h4><blockquote>
+<p>收到请求—&gt;一个单一的入口文件（就是一个路由分析处理程序）—&gt;找到对应路由—&gt;一系列的处理（请求/响应数据的处理）—&gt;返回一个视图</p>
+</blockquote>
+<p>在没有使用框架的情况下，上边的一系列流程处理都由后台开发者来进行维护/管理。开发者不仅要关心用户响应数据处理，还要把握流程的控制。并且流程控制的逻辑基本是相似的，项目之间可以进行复用。当项目足够大时，开发者自己写的那一套程序，如果独立出来基本也就是一个不那么通用的框架了。</p>
+<h2 id="1-使用laravel"><a href="#1-使用laravel" class="headerlink" title="1. 使用laravel"></a>1. 使用laravel</h2><p>laravel就是那样的一套算是通用的框架程序，这里边开发者只要关注用户响应数据的部分，对于请求的处理简单的使用框架的规则编写业务层的代码即可（路由，控制器，视图模板文件等），简化了开发管理的逻辑。并且封装了一系列的处理请求/响应的“更加优雅“API,会让程序开发更加的简单。</p>
+<h3 id="laravel项目结构"><a href="#laravel项目结构" class="headerlink" title="laravel项目结构"></a>laravel项目结构</h3><p>使用的是版本5.2.15</p>
+<p><img src="/images/laravel_dir.png" alt="laravel-dir"></p>
+<ul>
+<li>重要文件夹及作用：</li>
+</ul>
+<blockquote>
+<p>app:业务逻辑文件夹，写的路由、控制器，中间件规则都在该目录下。</p>
+<p>bootstrap: 框架启动载入文件。</p>
+<p>public：用户可以访问的唯一文件目录，用于存放你的css，js，image等资源文件。</p>
+<p>resource：存放最原始的资源文件夹，比如你的less，sass，coffescript文件，以及模板视图文件如blade文件。</p>
+<p>storage：日志文件，及编译后的视图文件等。</p>
+<p>config：各种配置文件的存放目录。</p>
+</blockquote>
+<h2 id="2-SXIMO"><a href="#2-SXIMO" class="headerlink" title="2. SXIMO"></a>2. SXIMO</h2><p>现在通过laravel框架，开发者可以很好的对自己的代码/业务逻辑进行控制。那网站的内容怎么管理，比如一个新闻站点现在需要更新一条消息，你该怎么做？</p>
+<p>当然你可以自己写一套CMS程序，这里就不说了。我们来说一下sximo这个cms框架程序。</p>
+<p>一个很重要的概念：</p>
+<p>数据库中的一张表—-&gt;sximo中的一个module—-&gt;HTML一张表单</p>
+<p>如下图：<br><img src="/images/sximo.png" alt="sximo"><br>在sximo中我们每创建一个模块都对应到app/view/下边的一个文件夹，该文件夹存放该模块对应的模板文件（即blade.php文件）。每个模板文件通过接口能简单的获取板块对应的数据表的数据。使用sximo的好处就是，方便了后台对数据库的操作。对模块数据表数据操作，框架本身已经封装。返回的数据前台直接使用即可。</p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="alignleft">
+            <a href="/2016/05/27/Laravel-and-sximo/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
+        </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
       <time datetime="2016-04-30T03:28:11.000Z"><a href="/2016/04/30/how-to-use-hexo/">2016 4月 30, 周六</a></time>
 
   
