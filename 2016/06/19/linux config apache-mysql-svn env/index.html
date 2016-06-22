@@ -84,7 +84,7 @@ xftp—-ftp连接软件，用于管理主机上的文件
   <div class="post-content">
     <header>
       
-      <time datetime="2016-06-19T05:28:23.000Z"><a href="/2016/06/19/linux配置apache-mysql-svn/">2016 6月 19, 周日</a></time>
+      <time datetime="2016-06-19T05:28:23.000Z"><a href="/2016/06/19/linux config apache-mysql-svn env/">2016 6月 19, 周日</a></time>
 
   
     <h1 class="title">linux配置apache+mysql+svn</h1>
@@ -110,7 +110,7 @@ xftp—-ftp连接软件，用于管理主机上的文件
 <li><p>创建文件夹 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/svn/pros -r</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>之后你创建的所有项目将放到pros目录下</p>
+<li><p>你创建的所有项目将放到pros目录下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在该文件夹下启动svn服务</span><br><span class="line">svnserver -d -r /home/svn/pros</span><br><span class="line">创建名为peoject1的项目。</span><br><span class="line">svnadmin create /home/svn/pros/project1</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>配置svn</p>
