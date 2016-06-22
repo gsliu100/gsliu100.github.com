@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>gsLex</title>
+  <title>小小布谷</title>
   <meta name="author" content="刘光胜">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-  <meta property="og:site_name" content="gsLex"/>
+  <meta property="og:site_name" content="小小布谷"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="gsLex" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="小小布谷" type="application/atom+xml">
   <link rel="stylesheet" href="//apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="//apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/style.css">
@@ -65,7 +65,7 @@
 			<div class="logo">
 				<img src="/logo.png" alt="Profile Picture">
 			</div>
-			<div id="title">gsLex</div>
+			<div id="title">小小布谷</div>
 		</a>
 
 		
@@ -87,6 +87,75 @@
 </ul>
 	</div>
 </div>
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-06-19T05:28:23.000Z"><a href="/2016/06/19/linux配置apache-mysql-svn/">2016 6月 19, 周日</a></time>
+
+  
+    <h1 class="title"><a href="/2016/06/19/linux配置apache-mysql-svn/">linux配置apache+mysql+svn</a></h1>
+  
+
+
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <h3 id="两个工具软件"><a href="#两个工具软件" class="headerlink" title="两个工具软件"></a>两个工具软件</h3><ol>
+<li>secureCRT—-远程主机连接软件</li>
+<li>xftp—-ftp连接软件，用于管理主机上的文件</li>
+</ol>
+<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><p>这里安装的是mysql5.6<br>参见<a href="http://jingyan.baidu.com/article/a378c9609eb652b3282830fd.html" target="_blank" rel="external">安装mysql</a></p>
+<h3 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache"></a>安装apache</h3><p>直接运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install httpd</span><br></pre></td></tr></table></figure></p>
+<p>等待下载及安装<br>配置文件在/ect/httpd/conf下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service httpd start</span><br><span class="line">用于启动httpd服务</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装svn"><a href="#安装svn" class="headerlink" title="安装svn"></a>安装svn</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">svn安装</span><br><span class="line">yum install subversion</span><br></pre></td></tr></table></figure>
+<p>创建版本库</p>
+<ol>
+<li><p>创建文件夹 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/svn/pros -r</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>之后你创建的所有项目将放到pros目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在该文件夹下启动svn服务</span><br><span class="line">svnserver -d -r /home/svn/pros</span><br><span class="line">创建名为peoject1的项目。</span><br><span class="line">svnadmin create /home/svn/pros/project1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置svn</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cd /home/svn/pros/project1/conf</span><br><span class="line">1.创建用户</span><br><span class="line">vim password</span><br><span class="line">&apos;=&apos;号前后分别为用户名及用户密码</span><br><span class="line">2.给创建的用于配置权限</span><br><span class="line">vim authz</span><br><span class="line">后边的rw表示给用户ligo以读写权限</span><br><span class="line">3.配置svnserver.conf</span><br><span class="line">该文件用于指定svn账户，及验证的配置文件所在目录</span><br><span class="line">vim svnserver.conf</span><br><span class="line">通过 svn co svn://youhost/youproject经过验证后将你的项目checkout到一个目录</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        <div class="alignleft">
+            <a href="/2016/06/19/linux配置apache-mysql-svn/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
+        </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
 
 
   <article class="post">
