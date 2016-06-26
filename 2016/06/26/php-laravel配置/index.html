@@ -57,7 +57,7 @@
     
       <li><a href="/archives">分类/标签</a></li>
     
-      <li><a href="////">爱的纪念日</a></li>
+      <li><a href="http://119.29.218.16">爱的纪念日</a></li>
     
   </ul>
   <div class="clearfix"></div>
@@ -114,7 +114,7 @@
 <p>更改yum源参照：<a href="http://www.multisilicon.com/blog/a26361064.html" target="_blank" rel="external">更改yum源</a><br>这里：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm</span><br><span class="line">wget http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.1-1.el5.rf.x86_64.rpm  </span><br><span class="line">rpm -ivh rpmforge-release-0.5.1-1.el5.rf.x86_64.rpm  </span><br><span class="line"></span><br><span class="line">yum install php56w //安装php5.6</span><br><span class="line">php -v //查看版本号</span><br></pre></td></tr></table></figure>
 <p>安装laravel需要的php模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install -y php56w-mysql php56w-mcrypt php56w-mbstring php56w-tokenizer php56w-openssl</span><br><span class="line">//这里一定要指定为你安装的php版本如：在安装mysql扩展时默认为php-mysql,会出现php-commont的冲突。只需要改为php56w-mysql即可。</span><br></pre></td></tr></table></figure></p>
-<p>配置php<br>我们开发时如果报错需要能打印出error stack,要开器php的report_errors选项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//找到php.ini 一般在/etc下边</span><br><span class="line">vim /ect/php.ini //找到display_errors将其置为 On</span><br></pre></td></tr></table></figure></p>
+<p>配置php<br>我们开发时如果报错需要能打印出error stack,要开启php的report_errors选项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//找到php.ini 一般在/etc下边</span><br><span class="line">vim /ect/php.ini //找到display_errors将其置为 On</span><br></pre></td></tr></table></figure></p>
 <h3 id="安装laravel"><a href="#安装laravel" class="headerlink" title="安装laravel"></a>安装laravel</h3><p>直接下载laravel一键安装包解压到你apache配置好的根目录。<br>在这里你需要开启apache的urlrewrite功能。<br>找到httpd.conf(在 /etc/httpd/conf/)，配置根目录的AllowOverride为All。<br>之后进入laravel目录将storage目录赋予777权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 777 -R storage</span><br></pre></td></tr></table></figure></p>
 <p>laravel的debug功能开启以及evn的配置查看laravel官网</p>
 
