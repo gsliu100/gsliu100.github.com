@@ -106,6 +106,71 @@
   <div class="post-content">
     <header>
       
+      <time datetime="2016-08-30T03:28:42.000Z"><a href="/2016/08/30/Promise简介/">2016 8月 30, 周二</a></time>
+
+  
+    <h1 class="title"><a href="/2016/08/30/Promise简介/">ES6 Promise简介</a></h1>
+  
+
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/Javascript/">Javascript</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <p>作为一种新的异步编程方案，个人觉得Promise只是在异步请求流程上让开发者有更好的控制。把原本的异步回掉用同步的展现形式（then）给表现出来。<br>ES6提供了Promise构造函数，Promise的基本用法是这样的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var promise = new Promise((resolve,reject)=&gt;&#123;</span><br><span class="line">     if(成功)&#123;</span><br><span class="line">          resolve(value);</span><br><span class="line">          &#125;else if(失败)&#123;</span><br><span class="line">          reject(error);</span><br><span class="line">          &#125;</span><br><span class="line">&#125;);</span><br><span class="line">promise.then(function1,function2);</span><br></pre></td></tr></table></figure></p>
+<p>首先创建一个Promise对象，接收一个函数作为参数，该函数有两个参数resolve与reject由es内部机制提供的。当调用resolve时会去执行后边then指定的成功时候的回调函数function1，调用reject时会去执行then指定的失败回掉的函数function2。</p>
+<p>这种模式一个明显的有点就是，将回掉与异步请求过程分开的，当有多个回掉时会时过程变的清晰。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">promise.then(function1,function2)</span><br><span class="line">       .then(function3);</span><br></pre></td></tr></table></figure></p>
+<p>当成功时会分别调用function1，function3，并且在function1中的返回值会作为function3的参数传递到function3.</p>
+<h3 id="promise-then"><a href="#promise-then" class="headerlink" title="promise.then"></a>promise.then</h3><p>promise.then返回的永远是另一个promise对象所以可以实现链式调用（注意是另一个promise），每一个then返回的promise都不一样，后一个then的调用有前一个promise状态的改变决定。</p>
+<h3 id="promise-catch"><a href="#promise-catch" class="headerlink" title="promise.catch"></a>promise.catch</h3><p>表示状态为reject时的回调</p>
+<h3 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h3><p>Promise.all([a,b,c,d]);将a,b,c,d合并为一个promise只有当所有的promise都resolve时，合并后的promise才发生resolve。</p>
+<h3 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h3><p>与Promise.add相对，合并后的promise对象状态由最先发生状态改变的那个promise状态决定。</p>
+<h3 id="Promise-reslove"><a href="#Promise-reslove" class="headerlink" title="Promise.reslove"></a>Promise.reslove</h3><p>该方法将一个对象转换为promise并返回，并且状态为resolve。</p>
+<h3 id="Promise-reject"><a href="#Promise-reject" class="headerlink" title="Promise.reject"></a>Promise.reject</h3><p>该方法将一个对象转换为promise并返回，并且状态为reject。</p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="alignleft">
+            <a href="/2016/08/30/Promise简介/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
+        </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
       <time datetime="2016-06-26T09:28:19.000Z"><a href="/2016/06/26/php-laravel配置/">2016 6月 26, 周日</a></time>
 
   

@@ -3,18 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>php-laravel配置 | 小小布谷</title>
+  <title>ES6 Promise简介 | 小小布谷</title>
   <meta name="author" content="刘光胜">
   
-  <meta name="description" content="前提是已经安装好apache+mysql并已配置好所有的服务
-
-安装php安装composer12curl -sS https://getcomposer.org/installer | phpmv composer.phar /usr/local/bin/composer
-这里安装laravel5">
+  <meta name="description" content="作为一种新的异步编程方案，个人觉得Promise只是在异步请求流程上让开发者有更好的控制。把原本的异步回掉用同步的展现形式（then）给表现出来。ES6提供了Promise构造函数，Promise的基本用法是这样的。12345678var promise = new Promise((resolve">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="php-laravel配置"/>
+  <meta property="og:title" content="ES6 Promise简介"/>
   <meta property="og:site_name" content="小小布谷"/>
 
   
@@ -81,24 +78,18 @@
   <div class="post-content">
     <header>
       
-      <time datetime="2016-06-26T09:28:19.000Z"><a href="/2016/06/26/php-laravel配置/">2016 6月 26, 周日</a></time>
+      <time datetime="2016-08-30T03:28:42.000Z"><a href="/2016/08/30/Promise简介/">2016 8月 30, 周二</a></time>
 
   
-    <h1 class="title">php-laravel配置</h1>
+    <h1 class="title">ES6 Promise简介</h1>
   
 
-
-  
-  <div class="categories">
-  	<i class="fa fa-folder-open"></i>
-    <a href="/categories/Back-End/">Back-End</a>
-  </div>
 
 
   
   <div class="tags">
   	<i class="fa fa-tag"></i>
-    <a href="/tags/php/">php</a>, <a href="/tags/laravel/">laravel</a>
+    <a href="/tags/Javascript/">Javascript</a>
   </div>
 
 <div class="clear"></div>
@@ -106,17 +97,16 @@
     </header>
     <div class="entry">
       
-        <blockquote>
-<p>前提是已经安装好apache+mysql并已配置好所有的服务</p>
-</blockquote>
-<h3 id="安装php"><a href="#安装php" class="headerlink" title="安装php"></a>安装php</h3><p>安装composer<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -sS https://getcomposer.org/installer | php</span><br><span class="line">mv composer.phar /usr/local/bin/composer</span><br></pre></td></tr></table></figure></p>
-<p>这里安装laravel5，需要php版本在5.6以上。<br>本系统为centos6.5，直接yum install会安装php5.3不合要求。所以需要更改yum源。</p>
-<p>更改yum源参照：<a href="http://www.multisilicon.com/blog/a26361064.html" target="_blank" rel="external">更改yum源</a><br>这里：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm</span><br><span class="line">wget http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.1-1.el5.rf.x86_64.rpm  </span><br><span class="line">rpm -ivh rpmforge-release-0.5.1-1.el5.rf.x86_64.rpm  </span><br><span class="line"></span><br><span class="line">yum install php56w //安装php5.6</span><br><span class="line">php -v //查看版本号</span><br></pre></td></tr></table></figure>
-<p>安装laravel需要的php模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install -y php56w-mysql php56w-mcrypt php56w-mbstring php56w-tokenizer php56w-openssl</span><br><span class="line">//这里一定要指定为你安装的php版本如：在安装mysql扩展时默认为php-mysql,会出现php-commont的冲突。只需要改为php56w-mysql即可。</span><br></pre></td></tr></table></figure></p>
-<p>配置php<br>我们开发时如果报错需要能打印出error stack,要开启php的report_errors选项。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//找到php.ini 一般在/etc下边</span><br><span class="line">vim /ect/php.ini //找到display_errors将其置为 On</span><br></pre></td></tr></table></figure></p>
-<h3 id="安装laravel"><a href="#安装laravel" class="headerlink" title="安装laravel"></a>安装laravel</h3><p>直接下载laravel一键安装包解压到你apache配置好的根目录。<br>在这里你需要开启apache的urlrewrite功能。<br>找到httpd.conf(在 /etc/httpd/conf/)，配置根目录的AllowOverride为All。<br>之后进入laravel目录将storage目录赋予777权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 777 -R storage</span><br></pre></td></tr></table></figure></p>
-<p>laravel的debug功能开启以及evn的配置查看laravel官网</p>
+        <p>作为一种新的异步编程方案，个人觉得Promise只是在异步请求流程上让开发者有更好的控制。把原本的异步回掉用同步的展现形式（then）给表现出来。<br>ES6提供了Promise构造函数，Promise的基本用法是这样的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var promise = new Promise((resolve,reject)=&gt;&#123;</span><br><span class="line">     if(成功)&#123;</span><br><span class="line">          resolve(value);</span><br><span class="line">          &#125;else if(失败)&#123;</span><br><span class="line">          reject(error);</span><br><span class="line">          &#125;</span><br><span class="line">&#125;);</span><br><span class="line">promise.then(function1,function2);</span><br></pre></td></tr></table></figure></p>
+<p>首先创建一个Promise对象，接收一个函数作为参数，该函数有两个参数resolve与reject由es内部机制提供的。当调用resolve时会去执行后边then指定的成功时候的回调函数function1，调用reject时会去执行then指定的失败回掉的函数function2。</p>
+<p>这种模式一个明显的有点就是，将回掉与异步请求过程分开的，当有多个回掉时会时过程变的清晰。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">promise.then(function1,function2)</span><br><span class="line">       .then(function3);</span><br></pre></td></tr></table></figure></p>
+<p>当成功时会分别调用function1，function3，并且在function1中的返回值会作为function3的参数传递到function3.</p>
+<h3 id="promise-then"><a href="#promise-then" class="headerlink" title="promise.then"></a>promise.then</h3><p>promise.then返回的永远是另一个promise对象所以可以实现链式调用（注意是另一个promise），每一个then返回的promise都不一样，后一个then的调用有前一个promise状态的改变决定。</p>
+<h3 id="promise-catch"><a href="#promise-catch" class="headerlink" title="promise.catch"></a>promise.catch</h3><p>表示状态为reject时的回调</p>
+<h3 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h3><p>Promise.all([a,b,c,d]);将a,b,c,d合并为一个promise只有当所有的promise都resolve时，合并后的promise才发生resolve。</p>
+<h3 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h3><p>与Promise.add相对，合并后的promise对象状态由最先发生状态改变的那个promise状态决定。</p>
+<h3 id="Promise-reslove"><a href="#Promise-reslove" class="headerlink" title="Promise.reslove"></a>Promise.reslove</h3><p>该方法将一个对象转换为promise并返回，并且状态为resolve。</p>
+<h3 id="Promise-reject"><a href="#Promise-reject" class="headerlink" title="Promise.reject"></a>Promise.reject</h3><p>该方法将一个对象转换为promise并返回，并且状态为reject。</p>
 
       
     </div>
@@ -141,10 +131,8 @@
           <div class="clearfix"></div>
           <nav id="pagination">
   
-    <a href="/2016/08/30/Promise简介/" class="alignleft prev"><i class="fa fa-long-arrow-left"></i>Next</a>
   
-  
-    <a href="/2016/06/19/linux config apache-mysql-svn env/" class="alignright next">Prev<i class="fa fa-long-arrow-right"></i></a>
+    <a href="/2016/06/26/php-laravel配置/" class="alignright next">Prev<i class="fa fa-long-arrow-right"></i></a>
   
   <div class="clearfix"></div>
 </nav>
