@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ES6 Promise简介 | 小小布谷</title>
+  <title>Javascript中两类this | 小小布谷</title>
   <meta name="author" content="刘光胜">
   
-  <meta name="description" content="作为一种新的异步编程方案，个人觉得Promise只是在异步请求流程上让开发者有更好的控制。把原本的异步回掉用同步的展现形式（then）给表现出来。ES6提供了Promise构造函数，Promise的基本用法是这样的。12345678var promise = new Promise((resolve">
+  <meta name="description" content="在作为返回值的函数中this都会指向全局对象1234567891011var name = &amp;apos;全局name&amp;apos;;function getName()&amp;#123;    console.log(this.name);    return function()&amp;#123;       ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="ES6 Promise简介"/>
+  <meta property="og:title" content="Javascript中两类this"/>
   <meta property="og:site_name" content="小小布谷"/>
 
   
@@ -78,10 +78,10 @@
   <div class="post-content">
     <header>
       
-      <time datetime="2016-08-30T03:28:42.000Z"><a href="/2016/08/30/Promise简介/">2016 8月 30, 周二</a></time>
+      <time datetime="2016-09-12T15:34:20.000Z"><a href="/2016/09/12/Javascript中作为函数值返回的函数中的this与作为参数传递的函数中的this/">2016 9月 12, 周一</a></time>
 
   
-    <h1 class="title">ES6 Promise简介</h1>
+    <h1 class="title">Javascript中两类this</h1>
   
 
 
@@ -89,7 +89,7 @@
   
   <div class="tags">
   	<i class="fa fa-tag"></i>
-    <a href="/tags/javascript/">javascript</a>
+    <a href="/tags/javascript/">javascript</a>, <a href="/tags/this/">this</a>
   </div>
 
 <div class="clear"></div>
@@ -97,16 +97,10 @@
     </header>
     <div class="entry">
       
-        <p>作为一种新的异步编程方案，个人觉得Promise只是在异步请求流程上让开发者有更好的控制。把原本的异步回掉用同步的展现形式（then）给表现出来。<br>ES6提供了Promise构造函数，Promise的基本用法是这样的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var promise = new Promise((resolve,reject)=&gt;&#123;</span><br><span class="line">     if(成功)&#123;</span><br><span class="line">          resolve(value);</span><br><span class="line">          &#125;else if(失败)&#123;</span><br><span class="line">          reject(error);</span><br><span class="line">          &#125;</span><br><span class="line">&#125;);</span><br><span class="line">promise.then(function1,function2);</span><br></pre></td></tr></table></figure></p>
-<p>首先创建一个Promise对象，接收一个函数作为参数，该函数有两个参数resolve与reject由es内部机制提供的。当调用resolve时会去执行后边then指定的成功时候的回调函数function1，调用reject时会去执行then指定的失败回掉的函数function2。</p>
-<p>这种模式一个明显的有点就是，将回掉与异步请求过程分开的，当有多个回掉时会时过程变的清晰。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">promise.then(function1,function2)</span><br><span class="line">       .then(function3);</span><br></pre></td></tr></table></figure></p>
-<p>当成功时会分别调用function1，function3，并且在function1中的返回值会作为function3的参数传递到function3.</p>
-<h3 id="promise-then"><a href="#promise-then" class="headerlink" title="promise.then"></a>promise.then</h3><p>promise.then返回的永远是另一个promise对象所以可以实现链式调用（注意是另一个promise），每一个then返回的promise都不一样，后一个then的调用有前一个promise状态的改变决定。</p>
-<h3 id="promise-catch"><a href="#promise-catch" class="headerlink" title="promise.catch"></a>promise.catch</h3><p>表示状态为reject时的回调</p>
-<h3 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h3><p>Promise.all([a,b,c,d]);将a,b,c,d合并为一个promise只有当所有的promise都resolve时，合并后的promise才发生resolve。</p>
-<h3 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h3><p>与Promise.add相对，合并后的promise对象状态由最先发生状态改变的那个promise状态决定。</p>
-<h3 id="Promise-reslove"><a href="#Promise-reslove" class="headerlink" title="Promise.reslove"></a>Promise.reslove</h3><p>该方法将一个对象转换为promise并返回，并且状态为resolve。</p>
-<h3 id="Promise-reject"><a href="#Promise-reject" class="headerlink" title="Promise.reject"></a>Promise.reject</h3><p>该方法将一个对象转换为promise并返回，并且状态为reject。</p>
+        <h3 id="在作为返回值的函数中this都会指向全局对象"><a href="#在作为返回值的函数中this都会指向全局对象" class="headerlink" title="在作为返回值的函数中this都会指向全局对象"></a>在作为返回值的函数中this都会指向全局对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var name = &apos;全局name&apos;;</span><br><span class="line">function getName()&#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">    return function()&#123;</span><br><span class="line">        console.log(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;name:&apos;obj-name&apos;,getName:getName&#125;;</span><br><span class="line">getName()();</span><br><span class="line">obj.getName()();</span><br><span class="line">getName.call(obj)();</span><br></pre></td></tr></table></figure>
+<p>程序输出结果为：<br><img src="/images/javascript-this1.png" alt="hexo"></p>
+<h3 id="作为函数参数的函数中的this同样指向全局对象"><a href="#作为函数参数的函数中的this同样指向全局对象" class="headerlink" title="作为函数参数的函数中的this同样指向全局对象"></a>作为函数参数的函数中的this同样指向全局对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function getName1()&#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">&#125;</span><br><span class="line">var obj1 = &#123;name:&apos;obj1-name&apos;,getName:function(func)&#123;console.log(this.name);func();&#125;&#125;;</span><br><span class="line">obj1.getName(getName1);</span><br><span class="line"></span><br><span class="line">var obj2 = &#123;name:&apos;obj2-name&apos;,getName:function()&#123;console.log(this.name)&#125;&#125;;</span><br><span class="line">var obj3 = &#123;name:&apos;obj3-name&apos;,getName:obj2.getName&#125;;</span><br><span class="line">obj3.getName();</span><br></pre></td></tr></table></figure>
+<p>程序输出：<br><img src="/images/javascript-this2.png" alt="hexo"></p>
 
       
     </div>
@@ -131,10 +125,8 @@
           <div class="clearfix"></div>
           <nav id="pagination">
   
-    <a href="/2016/09/12/Javascript中作为函数值返回的函数中的this与作为参数传递的函数中的this/" class="alignleft prev"><i class="fa fa-long-arrow-left"></i>Next</a>
   
-  
-    <a href="/2016/06/26/php-laravel配置/" class="alignright next">Prev<i class="fa fa-long-arrow-right"></i></a>
+    <a href="/2016/08/30/Promise简介/" class="alignright next">Prev<i class="fa fa-long-arrow-right"></i></a>
   
   <div class="clearfix"></div>
 </nav>
