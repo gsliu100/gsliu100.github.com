@@ -106,6 +106,94 @@
   <div class="post-content">
     <header>
       
+      <time datetime="2016-09-17T02:59:29.000Z"><a href="/2016/09/17/简介/">2016 9月 17, 周六</a></time>
+
+  
+    <h1 class="title"><a href="/2016/09/17/简介/">flex使用</a></h1>
+  
+
+
+
+  
+  <div class="tags">
+  	<i class="fa fa-tag"></i>
+    <a href="/tags/css/">css</a>, <a href="/tags/flex/">flex</a>
+  </div>
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <ol>
+<li><p>容器（container）<br>采用伸缩性布局，首先必须设置父容器的伸缩性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> .parent&#123;</span><br><span class="line">      display:flex;</span><br><span class="line">      display:-webkit-flex;</span><br><span class="line">      display:-ms-flex;</span><br><span class="line">      display:-o-flex;</span><br><span class="line">      display:-moz-flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>容器的属性</p>
+<ul>
+<li>display: //设置容器的伸缩性</li>
+<li>flex-direction: [row]|[column]|[row-reverse]|[column-reverse]//设置伸缩容器中子元素的流方向</li>
+<li>flex-wrap:[no-wrap]|[wrap]|[wrap-reverse]//设置换行的策略</li>
+<li>flex-flow://同时设置flex-direction与flex-wrap</li>
+<li>justify-content: [flex-start]|[flex-end]|[center]|[space-between]|[space-around]//设置伸缩项目在主轴上的对齐方式，如何使用剩余空间等</li>
+<li>align-item:[flex-start]|[flex-end]|[center]|[stretch]|[baseline]//设置项目在侧轴上的对齐方式</li>
+<li>align-content:[flex-start]|[flex-end]|[center]|[space-between]|[space-around]|[stretch]   //类似justify-content，item在侧轴上如何对齐                 </li>
+</ul>
+</li>
+<li>容器的项(Item)<ul>
+<li>设置子项的排列顺序，伸缩比例等</li>
+<li>item的属性<pre><code>1. order:[number]//设置item出现的循序，越大越靠后
+2. flex-grow:[number]//该值默认为0，即当有剩余空间时也不会放大去使用剩余空间
+3. flex-shrink:[number]//该值默认为1，当item的空间大于容器的空间时，item会进行缩放
+4. flex-basis:[number]//该值默认为auto,即item会根据item类容本身的尺寸来决定，flex-grow与flex-shrink的比例
+5. align-self://设置item在侧轴的对齐方式
+</code></pre></li>
+</ul>
+</li>
+<li>对flex的理解<br>每个item的flex属性用来设置该item如何进行伸缩，伸缩的基准是什么<br>例：所有item的flex-basis值的和决定伸缩容器可再分配剩余空间的大小，跟item具体设置的width与height无关，当flex-basis=auto时，该item的flex-basis的值就是元素本身的大小（或者是css设置的width或height）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">容器剩余的可分配空间 = 容器空间 - 每个item的flex-basis之和</span><br><span class="line">flex-grow决定item站剩余空间的一个比例</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>当元素设置了flex-basis之后，剩余空间的分配一此为基础，为元素的width将无效。</li>
+<li>只有在为元素设置了flex-grow之后元素才可以扩展，否者元素不会自动使用剩余的空间。</li>
+<li>当item的宽度之和大于container时，元素是默认收缩的。</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        <div class="alignleft">
+            <a href="/2016/09/17/简介/#more" class="more-link"><i class="fa fa-chevron-right"></i>Read More</a>
+        </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
       <time datetime="2016-09-12T15:34:20.000Z"><a href="/2016/09/12/Javascript中作为函数值返回的函数中的this与作为参数传递的函数中的this/">2016 9月 12, 周一</a></time>
 
   
